@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #b0b0b0;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex1 {
+      flex: 1;
+    }
+
+    .flex-column {
+      flex-direction: column;
+    }
+
+    .box-shadow {
+      box-shadow: 0 5px 15px -5px rgba(0, 0, 0, .5);
+    }
+
+    .mg8 {
+      margin: 8px;
+    }
+
+    .mgr8 {
+      margin-right: 8px;
+    }
+
+    .mgt8 {
+      margin-top: 8px;
+    }
+
+    .back-color {
+      background-color: #fff;
+    }
+
+    .nav {
+      cursor: pointer;
+      padding: 10px 20px;
+      border-bottom: 1px solid #f7f7f7;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .list-height {
+      height: 160px;
+    }
+
+    /* 当屏幕宽度小于600px时需要执行的css */
+    @media (max-width: 600px) {
+      .aside-content {
+        display: none;
+      }
+
+      .flex-auto {
+        flex: auto;
+      }
+
+      .content {
+        flex-direction: column;
+      }
+
+      .content-top {
+        flex-direction: column;
+      }
+
+      .content-middle {
+        flex-direction: column;
+      }
+
+      .content-right {
+        /* 
+         *  flex: auto等同于下面的：
+         *  flex-grow: 1;
+         *  flex-shrink: 1;
+         *  flex-basis: auto;
+         */
+        flex: auto;
+      }
+
+      .content-mgr {
+        margin: 0 0 8px;
+        flex: auto;
+      }
+    }
+  </style>
+</head>
+
+<body class="flex">
+  <!-- 侧边栏 -->
+  <div style="width: 200px; z-index: 2;" class="aside-content aside-navgation back-color box-shadow">
+    <!-- 头像栏 -->
+    <div class="flex"
+      style="padding: 10px; justify-content: center; align-items: center; border-bottom: 1px solid #999;">
+      <img src="./assets/headerImg.png" style="width: 40px; height: 40px" alt="headerImg">
+      <div>AA小哲</div>
+    </div>
+    <!-- 导航栏 -->
+    <div class="flex1">
+      <div class="nav">首页</div>
+      <div class="nav">文章</div>
+      <div class="nav">我的</div>
+      <div class="nav">设置</div>
+    </div>
+  </div>
+  <!-- 主区域 -->
+  <div class="main-content flex1 flex flex-column">
+    <!-- 头部栏 -->
+    <div style="height: 60px; width: 100%; border-bottom: 1px solid #999; z-index: 1;" class="back-color box-shadow">
+    </div>
+    <!-- 内容区 -->
+    <div class="flex flex1 content" style="overflow: auto;">
+      <!-- 左边区域 -->
+      <div style="flex: 3;" class="flex flex-column mg8">
+        <!-- 上边区域 -->
+        <div class="content-top flex">
+          <div style="height: 100px;" class="content-mgr flex1 mgr8 back-color"></div>
+          <div style="height: 100px;" class="content-mgr flex1 mgr8 back-color"></div>
+          <div style="height: 100px;" class="content-mgr flex1 mgr8 back-color"></div>
+          <div style="height: 100px;" class="content-mgr flex1 back-color"></div>
+        </div>
+        <!-- 下边区域 -->
+        <div style="flex: 1;" class="flex flex-column content-top">
+          <div class="list-height mgt8 back-color"></div>
+          <div class="list-height mgt8 back-color"></div>
+          <div class="list-height mgt8 back-color"></div>
+          <div class="list-height mgt8 back-color"></div>
+          <div class="list-height mgt8 back-color"></div>
+          <div class="list-height mgt8 back-color"></div>
+          <div class="list-height mgt8 back-color"></div>
+        </div>
+      </div>
+      <!-- 右边区域 -->
+      <div style="flex: 1;" class="content-right flex flex-column mg8">
+        <!-- 提示区 -->
+        <div style="height: 150px" class="back-color box-shadow"></div>
+        <!-- 消息区 -->
+        <div style="height: 300px" class="mgt8 back-color box-shadow"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
